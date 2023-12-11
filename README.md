@@ -1,1 +1,1 @@
-Создан для задач и некоторых проектов.
+Trial repository. Publishing tasks and projects.
