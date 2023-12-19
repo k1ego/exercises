@@ -1,5 +1,6 @@
 let prices1 = [7, 1, 5, 3, 6, 4]; //7
 let prices2 = [7, 6, 4, 3, 1]; //0
+//https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 
 let maxProfit = function (prices){
     let sell = 0;

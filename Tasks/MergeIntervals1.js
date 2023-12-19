@@ -1,6 +1,7 @@
 let input1 = [[1,3], [2,6], [8,10], [15,18]]; //[[1,6], [8,10], [15,18]]
 let input2 = [[1,4], [4,5]]; //[[1,5]]
 let input3 = [[11,12], [2,3], [5,7], [1,4], [8,10], [6,8]]; //[ [ 1, 4 ], [ 5, 10 ], [ 11, 12 ] ]
+// https://leetcode.com/problems/merge-intervals/
 
 function merge(intervals){
     if (intervals.length < 2) {
