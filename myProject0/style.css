@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+span {
+    font-style: italic;
+}
+/* контент на странице */
+
+.list-conteiner {
+    display: inline-block;
+    border-style: solid;
+    border-width: 0,5px;
+    padding-right: 20px;
+}
+.list-conteiner>p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.img-conteiner {
+    float: right;
+    border-style: solid;
+    border-width: 0,5px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.img-conteiner>div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo-html {
+    max-width: 70px;
+}
+
+/* верхняя навигационная панель */
+.nav-conteiner {
+    display: flex;
+    justify-content: space-between;
+    background-color: aquamarine;
+}
+
+.nav-conteiner>nav>ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-conteiner>nav>ul>li>a {
+    display: block;
+    padding: 10px;
+    border-style: solid;
+    border-width: 0,5px;
+}
+
+/* теперь поработаем над шрифтом */
+/* когда будет размер менее 900 пикселей, верхняя
+панель будет выстраиваться в колонку по вертикали */
+@media (max-width: 900px) {
+    .nav-conteiner {
+        flex-direction: column;
+    }
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+}
+.header {
+    width: 14%;
+    background-color: rgb(191, 240, 242);
+}
+.section {
+    width: 82%;
+}
+/* накинем пикселей к левому краю, чтобы там 
+все было не вплотную */
+.text-page {
+    padding-left: 15px;
+}
+
+.header>ol {
+    list-style: none;
+    border-bottom-style: solid;
+    border-width: 0,5px;
+    margin: 10px;
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+/* теперь поработаем с логотипом ГУАПА */
+.header>div {
+    width: 100%;
+}
+.header>div>img {
+    width: 100%;
+}
