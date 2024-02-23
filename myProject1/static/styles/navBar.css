@@ -1,0 +1,68 @@
+.navbar {
+    display: flex;
+    background-color: rgb(34, 32, 32);
+    height: 50px;
+}
+
+.navbar>.logo>img {
+    margin-left: 10px;
+    height: 100%; /* Занимать всю высоту верхнего бара */
+    width: 100%; /* Занимать всю ширину верхнего бара */
+}
+
+.nav-list {
+    display: flex;
+    margin-left: 15px;
+}
+
+
+.nav-list a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-list a:hover {
+    background-color: rgb(114, 110, 110);
+}
+
+.nav-btn {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .nav-btn {
+    font-size: 2em;
+    padding-inline: 10px;
+    padding-bottom: 3px;
+    border: none;
+    background-color: rgb(34, 32, 32);
+    color: white;
+    display: block;
+    cursor: pointer;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .nav-btn:hover {
+        background-color: rgb(114, 110, 110);
+    }
+
+    .drop:hover .nav-list {
+        display: block;
+        /*выпадает меню на основной текст
+        то есть на левый бар*/
+        position: absolute;
+        right: 0.5px;
+        background-color: rgb(34, 32, 32);
+    }
+
+    .navbar {
+        /* определяется разделения пространства
+        между элементами контента */
+        justify-content: space-between;
+    }
+}

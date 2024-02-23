@@ -1,0 +1,64 @@
+.main-container {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(1);
+	background-color: rgb(107, 51, 238);
+}
+
+.left-bar {
+	grid-column: 1/3;
+}
+
+.container {
+	grid-column: 3/11;
+}
+
+.right-bar {
+	grid-column: 11/13;
+}
+
+
+.left-bar p,
+.right-bar p {
+	margin: 1em;
+	padding: 1em;
+	border-style: solid;
+	border-width: 0, 5px;
+	color: aqua;
+	border-color: aquamarine;
+}
+
+
+@media (max-width: 800px) {
+	.main-container {
+		/* делаем разбиение на 2 бара - 
+сверху и снизу и конт. по середине */
+		grid-template-rows: repeat(3);
+	}
+
+	/* это для уменьшения экрана
+чтобы бары стали сверху, 
+а конт. по середине. Сейчас занимать
+они будут все колонки по горизонтали. */
+	.left-bar {
+		grid-column: 1/13;
+		grid-row: 1/2;
+	}
+
+	.container {
+		grid-column: 1/13;
+		grid-row: 2/3;
+	}
+
+	.right-bar {
+		grid-column: 1/13;
+		grid-row: 3/4;
+	}
+
+}
+
+@media (max-width: 600px) {
+	.main-container {
+		grid-template-rows: repeat(3);
+	}
+}

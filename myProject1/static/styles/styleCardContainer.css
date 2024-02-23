@@ -1,0 +1,66 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* fr в данном случае дробит экран на 
+равные части, столько сколько мы укажем
+(в данном случае 3, тк повторяемя 3 раза)*/
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3);
+}
+
+.card {
+	margin: 1.5em;
+}
+
+.card>a>img {
+	width: 100%;
+}
+
+.card>.info{
+    text-align: center;
+}
+.card>.info>a {
+	font-weight: bold;
+	text-decoration: none;
+	color: rgb(255, 115, 0);
+}
+
+.card>.info button{
+	margin-top: 4px;
+	background: #72ad4a; 
+    color: #fff; /* Белый цвет текста */
+    border: none; /* Убираем рамку */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+	cursor: pointer;
+}
+.card>.info button:hover {
+	background-color: #1ec24f;
+}
+
+.card>.info button:active {
+	transform: translateY(2px);
+}
+
+
+@media (max-width: 1000px) {
+	.container {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(5);
+	}
+}
+
+@media (max-width: 600px) {
+	.container {
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(9);
+	}
+/* это когда меньше 600px 
+отступы слева и справа по 0 */
+	.card {
+		margin-inline: 0;
+	}
+}
