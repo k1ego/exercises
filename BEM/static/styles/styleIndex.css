@@ -1,0 +1,62 @@
+/* Шапка */
+.header { 
+	background-color: var(--black-color);
+}
+
+.header__container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.header__logo {
+	/* тк ссылка по умолчанию inline */
+	display: block;
+	padding: 22px;
+	background-color: var(--base-color);
+	transition: opacity var(--transition-duration), background-color var(--transition-duration);
+	/* контур при выделении убрали */
+	outline: none;
+}
+
+.header__logo:focus-visible {
+	opacity: .8;
+}
+
+.header__logo:hover {
+	background-color: var(--base-color-hover);
+}
+
+.default-link:active {
+	color: var(--base-color-active);
+}
+
+
+@media (max-width: 740px) {
+	/* шапка */
+	.header__container {
+		/* шапка заполняет весь верх */
+		display: block;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.header__logo {
+		display: flex;
+		justify-content: center;
+	}
+
+	.header__menu {
+		padding: 20px 0;
+		/* элемент занимает всю доступную ширину внутри родителя */
+		width: 100%;
+		overflow-x: scroll;
+	}
+
+	.header__menu-list {
+		padding-left: 15px;
+		padding-right: 15px;
+		/* не будет растягиваться на всю доступную ширину, а займет сколько необходимо для размещения его содержимого */
+		width: fit-content;
+	}
+}
