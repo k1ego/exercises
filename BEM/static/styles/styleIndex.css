@@ -1,5 +1,5 @@
 /* Шапка */
-.header { 
+.header {
 	background-color: var(--black-color);
 }
 
@@ -14,13 +14,14 @@
 	display: block;
 	padding: 22px;
 	background-color: var(--base-color);
-	transition: opacity var(--transition-duration), background-color var(--transition-duration);
+	transition: opacity var(--transition-duration),
+		background-color var(--transition-duration);
 	/* контур при выделении убрали */
 	outline: none;
 }
 
 .header__logo:focus-visible {
-	opacity: .8;
+	opacity: 0.8;
 }
 
 .header__logo:hover {
@@ -31,8 +32,139 @@
 	color: var(--base-color-active);
 }
 
+/* Hero */
+.hero__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
 
-@media (max-width: 740px) {
+.hero__container::after {
+	/* это нужно, чтобы появился псевдоэлемент */
+	content: '';
+	display: block;
+	/* исходный размер до распределения доступного пространства */
+	flex-basis: 470px;
+	height: 375px;
+	background-image: url(../fonts/bike.svg);
+	/* автоматическое изменение размеров так, чтобы оно полностью поместилось в контейнере, независимо от его размеров. При этом сохранится соотношение сторон без искажений. */
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.hero__content {
+	flex-basis: 484px;
+}
+
+.hero__title {
+	/* отступы по умолчанию убираем*/
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-size: 34px;
+}
+
+.hero__desc {
+	max-width: 360px;
+	margin-top: 0;
+	margin-bottom: 48px;
+	font-size: 20px;
+}
+
+/* Форма обратной связи */
+
+.callback {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.callback__right {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.callback::before {
+	content: '';
+	display: block;
+	background-image: url(../images/left-bike.jpg);
+	background-size: cover;
+	background-position: center;
+	
+}
+
+.callback__right {
+	padding: 72px 50px;
+	background-image: linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.5) 0%,
+			rgba(0, 0, 0, 0.5) 100%
+		),
+		url(../images/right-bike.jpg);
+	background-size: cover;
+	background-position: center;
+	color: white;
+}
+
+.callback__title {
+	font-size: 0;
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+
+.callback__desc {
+	margin-top: 0;
+	max-width: 424px;
+	margin-bottom: 26px;
+	font-size: 20px;
+}
+
+/* Каталог */
+.catalog {
+	padding: 80px 0;
+}
+
+.catalog__subtitle {
+	margin-bottom: 60px;
+}
+
+.catalog__list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
+	margin: 0;
+	padding: 0;
+	/* убрали точки */
+	list-style-type: none;
+}
+
+.catalog__item_big {
+	/* означает, что элемент будет занимать 2 колонки */
+	grid-column: span 2;
+}
+
+/* класс, для расширения элементов по их соседям */
+.catalog__card {
+	height: 100%;
+}
+
+/* Футер */
+.footer {	
+	display: flex;
+	justify-content: center;
+	padding: 23px 15px;
+	background-color: var(--border-color);
+}
+
+.footer__logo {
+	opacity: 50%;
+}
+
+@media (max-width: 920px) {
 	/* шапка */
 	.header__container {
 		/* шапка заполняет весь верх */
@@ -58,5 +190,43 @@
 		padding-right: 15px;
 		/* не будет растягиваться на всю доступную ширину, а займет сколько необходимо для размещения его содержимого */
 		width: fit-content;
+	}
+
+	/* Hero */
+	.hero__container {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	.hero__container::after {
+		display: none;
+	}
+
+	.hero__title {
+		font-size: 28px;
+	}
+
+	/* Форма обратной связи */
+
+	.callback {
+		display: block;
+	}
+
+	.callback::before {
+		display: none;
+	}
+
+	/* Каталог */
+	.catalog {
+		padding: 40px 0;
+	}
+
+	.catalog__subtitle {
+		margin-bottom: 30px;
+	}
+
+	.catalog__list {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
 	}
 }

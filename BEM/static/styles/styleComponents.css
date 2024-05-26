@@ -25,7 +25,7 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
 	color: var(--black-color);
-	background-color: rgba(47, 47, 47, 0.418);
+	background-color: white
 }
 
 img {
@@ -189,8 +189,8 @@ a {
 	/* изображение вылезало из контейнера */
 	border-top-right-radius: 12px;
 	border-top-left-radius: 12px;
-	/* изображение будет растянуто или уменьшено таким образом, чтобы оно полностью заполнило контейнер, сохраняя при этом его пропорции */
-	object-fit: cover;
+	/* изображение масштабируется так, чтобы его реальный размер был отображен. Если размер например меньше контейнера, то останутся пустые места */
+	object-fit: contain;
 }
 
 .product-card__body {
@@ -234,6 +234,8 @@ a {
 .product-card__img_big { 
 	height: 100%;
 	border-radius: 12px;
+	/* изображение будет растянуто или уменьшено таким образом, чтобы оно полностью заполнило контейнер, сохраняя при этом его пропорции */
+	object-fit: cover;
 }
 
 .product-card__body_big {
@@ -258,7 +260,7 @@ a {
 }
 
 
-@media (max-width: 740px) {
+@media (max-width: 920px) {
 	/* Форма обратной связи */
 	.callback-form {
 		flex-direction: column;
